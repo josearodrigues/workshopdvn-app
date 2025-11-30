@@ -39,7 +39,7 @@ jobs:
       env:
         REGISTRY: ${{ steps.login-ecr.outputs.registry }}
       run: |
-        docker build -f ./apps/backend/YoutubeLiveApp/Dockerfile -t $REGISTRY/$BACKEND_REPOSITORY:$IMAGE_TAG ./apps/backend/YoutubeLiveApp/
+        docker build -f ./apps/backend/YoutubeLiveApp/Dockerfile -t $REGISTRY/$BACKEND_REPOSITORY:$IMAGE_TAG ./apps/backend/YoutubeLiveApp
         docker push $REGISTRY/$BACKEND_REPOSITORY:$IMAGE_TAG
     
     - name: Checkout gitops repository 
@@ -56,5 +56,5 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add ./kustomization.yml
-        git commit -m "[BOT] Update backend image to $REGISTRY/$BACKEND_REPOSITORY:$IMAGE_TAG
+        git commit -m "[BOT] Update backend image to $REGISTRY/$BACKEND_REPOSITORY:$IMAGE_TAG"
         git push
