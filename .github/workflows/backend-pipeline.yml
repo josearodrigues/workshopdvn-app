@@ -6,7 +6,7 @@ on:
     branches:
     - main
     paths: 
-    - 'wdn-app/apps/backend/**'
+    - 'workshopdvn-app/apps/backend/**'
 
 env:
   BACKEND_REPOSITORY: workshop-na-nuvem/production/backend
