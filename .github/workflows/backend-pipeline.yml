@@ -6,10 +6,9 @@ on:
     branches:
     - main
     paths: 
-    - 'wdn-app/backend/**'
+    - 'wdn-app/apps/backend/**'
 
 env:
-  AWS_REGION: us-east-1
   BACKEND_REPOSITORY: workshop-na-nuvem/production/backend
   IMAGE_TAG: ${{ github.sha }}
 
@@ -29,7 +28,7 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v5.1.1
       with:
-        aws-region: $AWS_REGION
+        aws-region: us-east-1
         role-to-assume: arn:aws:iam::381491977261:role/workshop-na-nuvem-github-role
     
     - name: Login to Amazon ECR
